@@ -31,19 +31,19 @@ export const userSlice = createSlice({
 			state.count = 0;
 		},
 
-		//for redux
-		usersFetching(state) {
-			state.isLoading = true;
-		},
-		usersFetchingSuccess(state, action: PayloadAction<IUser[]>) {
-			state.isLoading = false;
-			state.error = '';
-			state.users = action.payload;
-		},
-		usersFetchingError(state, action: PayloadAction<string>) {
-			state.isLoading = false;
-			state.error = action.payload;
-		},
+		// //for redux
+		// usersFetching(state) {
+		// 	state.isLoading = true;
+		// },
+		// usersFetchingSuccess(state, action: PayloadAction<IUser[]>) {
+		// 	state.isLoading = false;
+		// 	state.error = '';
+		// 	state.users = action.payload;
+		// },
+		// usersFetchingError(state, action: PayloadAction<string>) {
+		// 	state.isLoading = false;
+		// 	state.error = action.payload;
+		// },
 	},
 
 	//for toolkit

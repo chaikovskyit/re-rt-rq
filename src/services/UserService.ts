@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
-import { IPost } from '../models/IPost';
+import { IUser } from '../models/IUser';
 
-export const postAPI = createApi({
-	reducerPath: 'postAPI',
+export const userAPI = createApi({
+	reducerPath: 'userAPI',
 	baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
 	endpoints: (build) => ({
-		fetchAllPosts: build.query<IPost[], number>({
+		fetchAllUsers: build.query<IUser[], number>({
 			query: (limit: number = 5) => ({
-				url: '/posts',
+				url: '/users',
 				params: {
 					_limit: limit,
 				},

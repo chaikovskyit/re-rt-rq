@@ -3,6 +3,9 @@ import { userSlice } from './store/reducers/UserSlice';
 import './main.scss';
 import { useEffect } from 'react';
 import { fetchUsers } from './store/reducers/ActionCreators';
+import PostContainer from './components/posts/PostContainer';
+import UsersContainer from './components/user/UsersContainer';
+import Counter from './components/counter/Counter';
 
 function App() {
 	const { count, users, isLoading, error } = useAppSelector((state) => state.useReducer);
@@ -17,11 +20,8 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>Hello RTK</h1>
-			<h2>Count: {count}</h2>
-			<button onClick={() => dispatch(increment(10))}>Increment</button>
-			<button onClick={() => dispatch(decrement(5))}>Decrement</button>
-			<button onClick={() => dispatch(reset())}>Reset</button>
-			<div>
+			<Counter />
+			<div style={{ marginBottom: 70 }}>
 				<h2 style={{ textAlign: 'center' }}>Users</h2>
 				{isLoading && <h1>Loading ...</h1>}
 				{error && <h1>Something wrong ...</h1>}
@@ -43,6 +43,8 @@ function App() {
 						);
 					})}
 			</div>
+			<PostContainer />
+			<UsersContainer />
 		</div>
 	);
 }
